@@ -1,61 +1,77 @@
-# Site interativo: Apaixonados
+# 💕 Apaixonados
 
-## Objetivo
+> Uma experiência romântica, divertida e cheia de corações! ✨
 
-Este site é uma página romântica e descontraída. A primeira tela pergunta se a pessoa é apaixonada: o botão **Não** muda de lugar quando o cursor passa por cima, enquanto o botão **Sim** leva a uma segunda página com uma declaração de amor e corações animados.
+<p align="center">
+  <img src="animation%20bambi%20GIF%20by%20Disney.gif" alt="Bambi apaixonado" width="420">
+</p>
 
-## Como abrir
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,javascript" alt="Ícones das tecnologias HTML, CSS e JavaScript">
+</p>
 
-Abra o arquivo `index.html` em um navegador. Não é necessário instalar dependências nem iniciar um servidor: o projeto usa HTML, CSS, JavaScript e imagens locais.
+## 💘 Sobre o projeto
 
-## Como o site funciona
+Este é um site interativo e romântico em que o visitante responde a uma pergunta muito importante: **vocês são apaixonados?**
 
-1. `index.html` apresenta a pergunta, o GIF e os botões **Sim** e **Não**.
-2. `scrip.js` controla as ações dos botões.
-3. Ao clicar em **Sim**, o navegador abre `pagina2.html`.
-4. `pagina2.html` mostra a mensagem e carrega `scrip2.js`, que cria corações periodicamente.
+- O botão **Sim** leva o usuário para uma declaração especial.
+- O botão **Não** fica tímido e muda de lugar ao passar o cursor por cima.
+- Na segunda página, corações flutuantes tornam o momento ainda mais fofo! 🥰
 
-## Arquivos do projeto
+## 🎮 Como abrir
 
-- `index.html`: estrutura da página inicial e ligação com `estilo.css` e `scrip.js`.
-- `estilo.css`: cores, posicionamento e aparência da página inicial.
-- `scrip.js`: movimentação do botão **Não** e navegação para a segunda página.
-- `pagina2.html`: estrutura da página de declaração.
-- `estilo2.css`: aparência e animações visuais da segunda página.
-- `scrip2.js`: criação e remoção dos corações flutuantes.
-- `img/`: imagens usadas pelo site. O GIF da primeira página está na pasta principal do projeto.
+Não é necessário instalar nada nem usar um servidor.
 
-## Principais comandos
+1. Baixe ou clone este repositório.
+2. Abra o arquivo `index.html` no navegador.
+3. Escolha sua resposta com cuidado... 😏
 
-### HTML
+## 🛠️ Tecnologias utilizadas
 
-- `<link rel="stylesheet" href="estilo.css">`: conecta o arquivo HTML ao CSS responsável pelo visual.
-- `<script src="scrip.js"></script>`: carrega o JavaScript da página.
-- `onclick="nextPage()"`: chama a função `nextPage` quando o botão é clicado.
-- `onmouseover="movebuton()"`: chama `movebuton` quando o cursor passa sobre o botão **Não**.
-- `<img src="..." alt="...">`: exibe uma imagem e fornece uma descrição alternativa.
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-### JavaScript da página inicial (`scrip.js`)
+## 📂 Estrutura dos arquivos
 
-- `document.getElementById("noButton")`: encontra o botão **Não** pelo seu `id`.
-- `movebuton()`: move o botão para uma posição aleatória dentro da janela do navegador. `Math.random()` sorteia as coordenadas; `window.innerWidth` e `window.innerHeight` informam o tamanho da janela.
-- `noButton.style.position = "fixed"`: posiciona o botão em relação à janela, permitindo movê-lo livremente.
-- `nextPage()`: altera `window.location.href` para abrir `pagina2.html`.
+| Arquivo | Para que serve? |
+| --- | --- |
+| `index.html` | 🏠 Estrutura da página inicial |
+| `estilo.css` | 🎨 Visual da primeira página |
+| `scrip.js` | 🏃 Faz o botão **Não** fugir e abre a próxima página |
+| `pagina2.html` | 💌 Estrutura da declaração |
+| `estilo2.css` | 🌈 Visual e animações da segunda página |
+| `scrip2.js` | 💕 Cria os corações que flutuam pela tela |
+| `img/` | 🖼️ GIFs e imagens usadas nas páginas |
 
-### JavaScript da segunda página (`scrip2.js`)
+## ✨ Como o site funciona
 
-- `emojis`: lista de símbolos usados como corações flutuantes.
-- `document.createElement("span")`: cria um elemento HTML para cada coração.
-- `Math.floor(Math.random() * emojis.length)`: escolhe um emoji aleatório da lista.
-- `classList.add("coracao")`: aplica ao elemento os estilos e a animação definidos em `estilo2.css`.
-- `document.body.appendChild(coracao)`: adiciona o coração à página.
-- `setInterval(criarCoracao, 1000)`: cria um coração a cada 1.000 milissegundos (1 segundo).
-- `setTimeout(() => coracao.remove(), 9000)`: remove o coração após 9 segundos para evitar manter elementos desnecessários na página.
+### Página inicial
 
-### CSS
+A primeira página apresenta o GIF, a pergunta e os dois botões.
 
-- `display: flex`, `justify-content` e `align-items`: organizam e centralizam os elementos.
-- `min-height: 100vh`: faz a página ocupar pelo menos a altura da janela.
-- `position: fixed`, `left` e `top`: posicionam os corações e permitem mover o botão pela tela.
-- `@keyframes`: define as etapas de uma animação, como a subida dos corações.
-- `animation`: aplica uma animação CSS a um elemento.
+- `onmouseover="movebuton()"` faz o botão **Não** mudar de posição.
+- `onclick="nextPage()"` chama a função que abre `pagina2.html`.
+- `Math.random()` ajuda a sortear novas coordenadas para o botão fugitivo.
+
+### Segunda página
+
+A declaração aparece junto com uma animação divertida:
+
+- `document.createElement("span")` cria um novo coração.
+- `Math.floor(Math.random() * emojis.length)` escolhe um emoji aleatório.
+- `classList.add("coracao")` aplica o estilo e a animação.
+- `setInterval(criarCoracao, 1000)` cria um coração a cada segundo.
+- `setTimeout(() => coracao.remove(), 9000)` remove o coração depois de 9 segundos.
+
+## 🌈 Destaques do código
+
+- `display: flex` — centraliza os elementos com flexibilidade.
+- `min-height: 100vh` — ocupa a altura da tela do navegador.
+- `position: fixed` — permite posicionar o botão e os corações livremente.
+- `@keyframes` — cria a animação em que os corações sobem pela tela.
+- `window.location.href` — direciona o visitante para a segunda página.
+
+## 🤝 Créditos
+
+Projeto criado com HTML, CSS e JavaScript — e uma boa dose de romance! 💖
